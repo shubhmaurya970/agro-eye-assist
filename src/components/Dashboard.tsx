@@ -95,7 +95,7 @@ const Dashboard = () => {
           <div className="space-y-3 mb-6">
             <Button className="w-full" variant="default">
               <Upload className="w-4 h-4 mr-2" />
-              199 Upload More
+              Upload More
             </Button>
             <Button className="w-full" variant="outline">
               <FileText className="w-4 h-4 mr-2" />
@@ -253,31 +253,33 @@ const Dashboard = () => {
             </CardContent>
           </Card>
 
-          {/* Breed Score Comparison */}
+          {/* Milk Production Formula */}
           <Card className="mb-6">
             <CardHeader>
-              <CardTitle className="text-lg">Breed Score Comparison</CardTitle>
+              <CardTitle className="text-lg">Milk Production Formula</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="space-y-4">
-                <div className="flex justify-between items-center">
-                  <span className="text-sm">Your Animal</span>
-                  <span className="text-lg font-bold text-green-600">8.2</span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-3">
-                  <div className="bg-green-500 h-3 rounded-full" style={{width: '82%'}}></div>
-                </div>
-                
-                <div className="flex justify-between items-center mt-4">
-                  <span className="text-sm">Breed Average</span>
-                  <span className="text-lg font-bold text-blue-600">6.5</span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-3">
-                  <div className="bg-blue-500 h-3 rounded-full" style={{width: '65%'}}></div>
+              <div className="space-y-4 text-xs">
+                <div>
+                  <div className="font-medium mb-2">Formula:</div>
+                  <div className="bg-gray-50 p-2 rounded text-xs font-mono">
+                    (Score_16*W1 + Score_15*W2 + Score_14*W3 + Score_13*W4 + Score_12*W5) / (9*(W1+W2+W3+W4+W5)) * 100
+                  </div>
                 </div>
                 
-                <div className="text-xs text-green-600 text-center mt-3 font-medium">
-                  26% above breed average
+                <div>
+                  <div className="font-medium mb-2">Example:</div>
+                  <div className="space-y-1">
+                    <div>Scores: Udder Depth=7, Udder Support=8, Rear Udder Height=6, Rear Udder Width=5, Fore Attachment=6</div>
+                    <div className="bg-gray-50 p-2 rounded font-mono">
+                      (7*0.4 + 8*0.3 + 6*0.15 + 5*0.1 + 6*0.05)/(9*1)*100 = 76.7%
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <div className="font-medium mb-2">Interpretation:</div>
+                  <div className="text-muted-foreground">"This animal's physical udder structure suggests a 76.7% efficiency potential compared to an ideal animal."</div>
                 </div>
               </div>
             </CardContent>
