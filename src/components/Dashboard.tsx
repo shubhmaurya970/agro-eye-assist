@@ -10,10 +10,10 @@ const Dashboard = () => {
   const [selectedImage, setSelectedImage] = useState(heroImage);
 
   const analysisResults = [
-    { label: "Rump Angle", value: "85°", score: 7.9, color: "bg-purple-500", bgColor: "bg-purple-100" },
-    { label: "Rump Width", value: "78", score: 4.6, color: "bg-blue-500", bgColor: "bg-blue-100" },
-    { label: "Body Length", value: "92", score: 2.9, color: "bg-cyan-500", bgColor: "bg-cyan-100" },
-    { label: "Bone Structure", value: "81", score: 3.4, color: "bg-orange-500", bgColor: "bg-orange-100" },
+    { label: "Rump Angle Score", value: "8", score: 7.9, color: "bg-purple-500", bgColor: "bg-purple-100" },
+    { label: "Rump Width Score", value: "7", score: 4.6, color: "bg-blue-500", bgColor: "bg-blue-100" },
+    { label: "Body Length Score", value: "9", score: 2.9, color: "bg-cyan-500", bgColor: "bg-cyan-100" },
+    { label: "Bone Structure Score", value: "8", score: 3.4, color: "bg-orange-500", bgColor: "bg-orange-100" },
   ];
 
   return (
@@ -136,9 +136,9 @@ const Dashboard = () => {
                   </div>
                   <div className="text-2xl font-bold mb-1">{result.value}</div>
                   <div className="text-xs text-muted-foreground mb-2">
-                    {result.label === "Rump Angle" ? "Broad Analysis" : 
-                     result.label === "Rump Width" ? "Broad Width" :
-                     result.label === "Body Length" ? "Body Length" : "Dear Latter"}
+                    {result.label === "Rump Angle Score" ? "Broad Analysis" : 
+                     result.label === "Rump Width Score" ? "Broad Width" :
+                     result.label === "Body Length Score" ? "Body Length" : "Bone Analysis"}
                   </div>
                   <div className="text-xs font-medium">{result.score}</div>
                 </CardContent>
@@ -155,15 +155,25 @@ const Dashboard = () => {
               </CardHeader>
               <CardContent>
                 <div className="text-3xl font-bold text-green-500 mb-2">35 <span className="text-sm font-normal">lts/day</span></div>
-                <div className="text-sm text-muted-foreground mb-4">LOW already</div>
+                <div className="text-sm text-muted-foreground mb-4">HIGH production</div>
+                
+                {/* Good for Breeding Section */}
+                <div className="bg-green-50 border border-green-200 rounded-lg p-3 mb-4">
+                  <div className="flex items-center mb-2">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                    <span className="text-sm font-medium text-green-700">Good for Breeding</span>
+                  </div>
+                  <div className="text-xs text-green-600">Excellent milk production genetics</div>
+                </div>
+                
                 <div className="space-y-2 text-xs">
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                    <span>HGTrips-first</span>
+                    <span>High quality milk</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                    <span>Fairly booster</span>
+                    <span>Genetic potential</span>
                   </div>
                 </div>
                 <div className="mt-4 flex space-x-2">
@@ -184,14 +194,14 @@ const Dashboard = () => {
               </CardHeader>
               <CardContent>
                 <div className="flex items-center justify-center h-32 mb-4">
-                  <div className="w-24 h-24 border-4 border-blue-500 rounded-full flex items-center justify-center">
+                  <div className="w-24 h-24 border-4 border-green-500 rounded-full flex items-center justify-center bg-green-50">
                     <div className="text-center">
-                      <div className="text-2xl font-bold">215</div>
-                      <div className="text-xs">days cycle</div>
+                      <div className="text-2xl font-bold text-green-700">HIGH</div>
+                      <div className="text-xs text-green-600">potential</div>
                     </div>
                   </div>
                 </div>
-                <div className="text-sm text-muted-foreground text-center">Dimensional</div>
+                <div className="text-sm text-green-600 text-center font-medium">Excellent Genetics</div>
               </CardContent>
             </Card>
           </div>
@@ -270,23 +280,32 @@ const Dashboard = () => {
             </CardContent>
           </Card>
 
-          {/* Aims Chart */}
+          {/* Breed Score Comparison */}
           <Card className="mb-6">
             <CardHeader>
-              <CardTitle className="text-lg">Aims</CardTitle>
+              <CardTitle className="text-lg">Breed Score Comparison</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="h-32 flex items-end justify-center space-x-1">
-                <div className="w-4 bg-green-400 h-16 rounded-t"></div>
-                <div className="w-4 bg-blue-400 h-24 rounded-t"></div>
-                <div className="w-4 bg-purple-400 h-12 rounded-t"></div>
-                <div className="w-4 bg-orange-400 h-20 rounded-t"></div>
-                <div className="w-4 bg-cyan-400 h-28 rounded-t"></div>
-              </div>
-              <div className="flex justify-between text-xs mt-2">
-                <span>ICON</span>
-                <span>CON</span>
-                <span>Poor</span>
+              <div className="space-y-4">
+                <div className="flex justify-between items-center">
+                  <span className="text-sm">Your Animal</span>
+                  <span className="text-lg font-bold text-green-600">8.2</span>
+                </div>
+                <div className="w-full bg-gray-200 rounded-full h-3">
+                  <div className="bg-green-500 h-3 rounded-full" style={{width: '82%'}}></div>
+                </div>
+                
+                <div className="flex justify-between items-center mt-4">
+                  <span className="text-sm">Breed Average</span>
+                  <span className="text-lg font-bold text-blue-600">6.5</span>
+                </div>
+                <div className="w-full bg-gray-200 rounded-full h-3">
+                  <div className="bg-blue-500 h-3 rounded-full" style={{width: '65%'}}></div>
+                </div>
+                
+                <div className="text-xs text-green-600 text-center mt-3 font-medium">
+                  26% above breed average
+                </div>
               </div>
             </CardContent>
           </Card>
