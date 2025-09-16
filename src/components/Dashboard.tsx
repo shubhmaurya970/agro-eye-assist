@@ -10,10 +10,13 @@ const Dashboard = () => {
   const [selectedImage, setSelectedImage] = useState(heroImage);
 
   const analysisResults = [
-    { label: "Rump Angle Score", value: "8", score: 7.9, color: "bg-purple-500", bgColor: "bg-purple-100" },
-    { label: "Rump Width Score", value: "7", score: 4.6, color: "bg-blue-500", bgColor: "bg-blue-100" },
-    { label: "Body Length Score", value: "9", score: 2.9, color: "bg-cyan-500", bgColor: "bg-cyan-100" },
-    { label: "Bone Structure Score", value: "8", score: 3.4, color: "bg-orange-500", bgColor: "bg-orange-100" },
+    { label: "Rump Angle Score", value: "8/10", score: 7.9, color: "bg-purple-500", bgColor: "bg-purple-100" },
+    { label: "Rump Width Score", value: "7/10", score: 4.6, color: "bg-blue-500", bgColor: "bg-blue-100" },
+    { label: "Body Length Score", value: "9/10", score: 2.9, color: "bg-cyan-500", bgColor: "bg-cyan-100" },
+    { label: "Bone Structure Score", value: "8/10", score: 3.4, color: "bg-orange-500", bgColor: "bg-orange-100" },
+    { label: "Chest Width Score", value: "7.5/10", score: 6.8, color: "bg-green-500", bgColor: "bg-green-100" },
+    { label: "Body Condition Score", value: "9/10", score: 8.5, color: "bg-indigo-500", bgColor: "bg-indigo-100" },
+    { label: "Udder Score", value: "3/10", score: 2.1, color: "bg-red-500", bgColor: "bg-red-100" },
   ];
 
   return (
@@ -146,48 +149,8 @@ const Dashboard = () => {
             ))}
           </div>
 
-          {/* Milk Production and Prediction */}
-          <div className="grid grid-cols-2 gap-6 mb-8">
-            {/* Milk Production */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Milk Production</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="text-3xl font-bold text-green-500 mb-2">35 <span className="text-sm font-normal">lts/day</span></div>
-                <div className="text-sm text-muted-foreground mb-4">HIGH production</div>
-                
-                {/* Good for Breeding Section */}
-                <div className="bg-green-50 border border-green-200 rounded-lg p-3 mb-4">
-                  <div className="flex items-center mb-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                    <span className="text-sm font-medium text-green-700">Good for Breeding</span>
-                  </div>
-                  <div className="text-xs text-green-600">Excellent milk production genetics</div>
-                </div>
-                
-                <div className="space-y-2 text-xs">
-                  <div className="flex items-center">
-                    <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                    <span>High quality milk</span>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                    <span>Genetic potential</span>
-                  </div>
-                </div>
-                <div className="mt-4 flex space-x-2">
-                  <div className="w-8 h-8 bg-orange-200 rounded"></div>
-                  <div className="space-y-1">
-                    <div className="w-4 h-2 bg-green-500 rounded"></div>
-                    <div className="w-4 h-2 bg-blue-500 rounded"></div>
-                    <div className="w-4 h-2 bg-purple-500 rounded"></div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Milk Production Prediction */}
+          {/* Milk Production Prediction */}
+          <div className="mb-8">
             <Card>
               <CardHeader>
                 <CardTitle className="text-lg">Milk Production Prediction</CardTitle>
@@ -201,6 +164,16 @@ const Dashboard = () => {
                     </div>
                   </div>
                 </div>
+                
+                {/* Good for Breeding Section */}
+                <div className="bg-green-50 border border-green-200 rounded-lg p-3 mb-4">
+                  <div className="flex items-center mb-2">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                    <span className="text-sm font-medium text-green-700">Good for Breeding</span>
+                  </div>
+                  <div className="text-xs text-green-600">Excellent milk production genetics</div>
+                </div>
+                
                 <div className="text-sm text-green-600 text-center font-medium">Excellent Genetics</div>
               </CardContent>
             </Card>
